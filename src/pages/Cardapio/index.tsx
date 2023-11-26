@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import Filters from "./Filters";
+import Sorter from "./Sorter";
 
 export default function Cardapio() {
   const [search, setSearch] = useState("");
@@ -25,6 +26,7 @@ export default function Cardapio() {
 
         <div className={styles.cardapio__filtros}>
           <Filters filter={filter} setFilter={setFilter} />
+          <Sorter />
         </div>
       </section>
     </main>
