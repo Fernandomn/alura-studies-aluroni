@@ -2,9 +2,11 @@ import styles from "./Cardapio.module.scss";
 import { ReactComponent as Logo } from "assets/logo.svg";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import Filters from "./Filters";
 
 export default function Cardapio() {
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState<number | null>(null);
 
   return (
     <main>
@@ -18,7 +20,12 @@ export default function Cardapio() {
 
       <section className={styles.cardapio}>
         <h3 className={styles.cardapio__title}>Cardápio</h3>
+
         <SearchBar search={search} setSearch={setSearch} />
+
+        <div className={styles.cardapio__filtros}>
+          <Filters filter={filter} setFilter={setFilter} />
+        </div>
       </section>
     </main>
   );
