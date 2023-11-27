@@ -3,10 +3,11 @@ import { useState } from "react";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import styles from "./Sorter.module.scss";
 import options from "./options.json";
+import { SorterOptions } from "types/sort";
 
 interface Props {
   sorter: string;
-  setSorter: React.Dispatch<React.SetStateAction<string>>;
+  setSorter: React.Dispatch<React.SetStateAction<SorterOptions>>;
 }
 
 export default function Sorter({ sorter, setSorter }: Props) {
@@ -40,7 +41,7 @@ export default function Sorter({ sorter, setSorter }: Props) {
           <div
             className={styles.ordenador__option}
             key={option.value}
-            onClick={() => setSorter(option.value)}
+            onClick={() => setSorter(option.value as SorterOptions)}
           >
             {option.nome}
           </div>

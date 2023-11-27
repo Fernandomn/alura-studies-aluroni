@@ -5,11 +5,12 @@ import { useState } from "react";
 import Filters from "./Filters";
 import Sorter from "./Sorter";
 import Itens from "./Itens";
+import { SorterOptions } from "types/sort";
 
 export default function Cardapio() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<number | null>(null);
-  const [sorter, setSorter] = useState("");
+  const [sorter, setSorter] = useState<SorterOptions>("");
 
   return (
     <main>
@@ -32,7 +33,7 @@ export default function Cardapio() {
           <Sorter sorter={sorter} setSorter={setSorter} />
         </div>
 
-        <Itens />
+        <Itens search={search} filter={filter} sorter={sorter} />
       </section>
     </main>
   );

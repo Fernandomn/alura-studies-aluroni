@@ -15,9 +15,15 @@ interface Props {
   };
 }
 
-export default function Item(props: Props) {
-  const { title, description, category, size, serving, price, photo } = props;
-
+export default function Item({
+  title,
+  description,
+  category,
+  size,
+  serving,
+  price,
+  photo,
+}: Props) {
   return (
     <div className={styles.item}>
       <div className={styles.item__imagem}>
