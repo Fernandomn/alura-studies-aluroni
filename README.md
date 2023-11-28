@@ -1,3 +1,7 @@
+# Curso original
+
+[React: lidando com arquivos estáticos](https://cursos.alura.com.br/course/react-arquivos-estaticos)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
