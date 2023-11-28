@@ -1,2 +1,2 @@
-export type SorterOptions = "" | "porcao" | "qtd_pessoas" | "preco";
+export type SorterOptions = '' | 'porcao' | 'qtd_pessoas' | 'preco';
 

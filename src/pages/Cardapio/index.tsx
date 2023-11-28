@@ -1,16 +1,16 @@
-import styles from "./Cardapio.module.scss";
-import { ReactComponent as Logo } from "assets/logo.svg";
-import SearchBar from "./SearchBar";
-import { useState } from "react";
-import Filters from "./Filters";
-import Sorter from "./Sorter";
-import Itens from "./Itens";
-import { SorterOptions } from "types/sort";
+import styles from './Cardapio.module.scss';
+import { ReactComponent as Logo } from 'assets/logo.svg';
+import SearchBar from './SearchBar';
+import { useState } from 'react';
+import Filters from './Filters';
+import Sorter from './Sorter';
+import Itens from './Itens';
+import { SorterOptions } from 'types/sort';
 
 export default function Cardapio() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
-  const [sorter, setSorter] = useState<SorterOptions>("");
+  const [sorter, setSorter] = useState<SorterOptions>('');
 
   return (
     <main>

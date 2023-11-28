@@ -1,6 +1,6 @@
-import options from "./filters.json";
-import styles from "./Filters.module.scss";
-import classNames from "classnames";
+import options from './filters.json';
+import styles from './Filters.module.scss';
+import classNames from 'classnames';
 
 interface IFilter {
   id: number;
@@ -25,7 +25,7 @@ export default function Filters({ filter, setFilter }: Props) {
           key={option.id}
           className={classNames({
             [styles.filtros__filtro]: true,
-            [styles["filtros__filtro--ativo"]]: filter === option.id,
+            [styles['filtros__filtro--ativo']]: filter === option.id,
           })}
           onClick={() => selectFilter(option)}
         >

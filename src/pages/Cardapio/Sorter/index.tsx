@@ -1,9 +1,9 @@
-import classNames from "classnames";
-import { useState } from "react";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import styles from "./Sorter.module.scss";
-import options from "./options.json";
-import { SorterOptions } from "types/sort";
+import classNames from 'classnames';
+import { useState } from 'react';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import styles from './Sorter.module.scss';
+import options from './options.json';
+import { SorterOptions } from 'types/sort';
 
 interface Props {
   sorter: string;
@@ -19,12 +19,12 @@ export default function Sorter({ sorter, setSorter }: Props) {
     <button
       className={classNames({
         [styles.ordenador]: true,
-        [styles["ordenador--ativo"]]: sorter !== "",
+        [styles['ordenador--ativo']]: sorter !== '',
       })}
       onClick={() => setOpen(!open)}
       onBlur={() => setOpen(false)}
     >
-      <span>{sorterName || "Ordenar Por:"}</span>
+      <span>{sorterName || 'Ordenar Por:'}</span>
       {open ? (
         <MdKeyboardArrowUp size={20} />
       ) : (
@@ -34,7 +34,7 @@ export default function Sorter({ sorter, setSorter }: Props) {
       <div
         className={classNames({
           [styles.ordenador__options]: true,
-          [styles["ordenador__options--ativo"]]: open,
+          [styles['ordenador__options--ativo']]: open,
         })}
       >
         {options.map((option) => (

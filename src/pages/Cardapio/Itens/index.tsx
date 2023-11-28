@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { SorterOptions } from "types/sort";
-import Item from "./Item";
-import styles from "./Itens.module.scss";
-import cardapio from "./itens.json";
+import { useEffect, useState } from 'react';
+import { SorterOptions } from 'types/sort';
+import Item from './Item';
+import styles from './Itens.module.scss';
+import cardapio from './itens.json';
 
 interface Props {
   search: string;
@@ -15,7 +15,7 @@ export default function Itens({ search, filter, sorter }: Props) {
 
   useEffect(() => {
     const trySearch = (title: string): boolean => {
-      const regex = new RegExp(search, "i");
+      const regex = new RegExp(search, 'i');
       return regex.test(title);
     };
 
@@ -25,14 +25,14 @@ export default function Itens({ search, filter, sorter }: Props) {
 
     const sortList = (newList: typeof cardapio) => {
       switch (sorter) {
-        case "porcao":
-          return ordenarPropriedadeCrescente(newList, "size");
-        case "qtd_pessoas":
-          return ordenarPropriedadeCrescente(newList, "serving");
-        case "preco":
-          return ordenarPropriedadeCrescente(newList, "price");
-        default:
-          return newList;
+      case 'porcao':
+        return ordenarPropriedadeCrescente(newList, 'size');
+      case 'qtd_pessoas':
+        return ordenarPropriedadeCrescente(newList, 'serving');
+      case 'preco':
+        return ordenarPropriedadeCrescente(newList, 'price');
+      default:
+        return newList;
       }
     };
 
@@ -44,7 +44,7 @@ export default function Itens({ search, filter, sorter }: Props) {
 
   const ordenarPropriedadeCrescente = (
     lista: typeof cardapio,
-    propriedade: "size" | "serving" | "price"
+    propriedade: 'size' | 'serving' | 'price'
   ) => {
     return lista.sort((a, b) => (a[propriedade] > b[propriedade] ? 1 : -1));
   };
