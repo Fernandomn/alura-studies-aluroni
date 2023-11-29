@@ -1,11 +1,10 @@
-import styles from './Cardapio.module.scss';
-import { ReactComponent as Logo } from 'assets/logo.svg';
-import SearchBar from './SearchBar';
 import { useState } from 'react';
-import Filters from './Filters';
-import Sorter from './Sorter';
-import Itens from './Itens';
 import { SorterOptions } from 'types/sort';
+import styles from './Cardapio.module.scss';
+import Filters from './Filters';
+import Itens from './Itens';
+import SearchBar from './SearchBar';
+import Sorter from './Sorter';
 
 export default function Cardapio() {
   const [search, setSearch] = useState('');
@@ -14,10 +13,6 @@ export default function Cardapio() {
 
   return (
     <main>
-      <nav className={styles.menu}>
-        <Logo />
-      </nav>
-
       <header className={styles.header}>
         <div className={styles.header__text}>A Casa do Código e da Massa</div>
       </header>
