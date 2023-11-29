@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import styles from './Sorter.module.scss';
-import options from './options.json';
+import options from '../../../data/options.json';
 import { SorterOptions } from 'types/sort';
 
 interface Props {
