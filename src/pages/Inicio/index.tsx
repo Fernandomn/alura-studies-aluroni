@@ -1,3 +1,4 @@
+import themeStyles from 'styles/Theme.module.scss';
 import cardapio from '../../data/cardapio.json';
 import styles from './Inicio.module.scss';
 
@@ -9,7 +10,7 @@ export default function Inicio() {
 
   return (
     <section>
-      <h3 className={styles.titulo}>Recomendações da cozinha</h3>
+      <h3 className={themeStyles.titulo}>Recomendações da cozinha</h3>
 
       <div className={styles.recomendados}>
         {recomendedDishes.map((item) => (

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import themeStyles from 'styles/Theme.module.scss';
 import { SorterOptions } from 'types/sort';
 import styles from './Cardapio.module.scss';
 import Filters from './Filters';
@@ -13,7 +14,7 @@ export default function Cardapio() {
 
   return (
     <section className={styles.cardapio}>
-      <h3 className={styles.cardapio__title}>Cardápio</h3>
+      <h3 className={themeStyles.titulo}>Cardápio</h3>
 
       <SearchBar search={search} setSearch={setSearch} />
 
