@@ -1,6 +1,7 @@
 import themeStyles from 'styles/Theme.module.scss';
 import cardapio from '../../data/cardapio.json';
 import styles from './Inicio.module.scss';
+import imgNossaCasa from 'assets/nossa_casa.png';
 
 export default function Inicio() {
   let recomendedDishes = [...cardapio];
@@ -22,6 +23,18 @@ export default function Inicio() {
             <button className={styles.recomendado__botao}>Ver mais</button>
           </div>
         ))}
+      </div>
+
+      <h3 className={themeStyles.titulo}>Nossa casa</h3>
+
+      <div className={styles.nossaCasa}>
+        <img src={imgNossaCasa} alt="Casa do Aluroni" />
+
+        <div className={styles.nossaCasa__endereco}>
+          <p>Rua Vergueiro, 3185</p>
+
+          <p>Vila Mariana - SP</p>
+        </div>
       </div>
     </section>
   );
