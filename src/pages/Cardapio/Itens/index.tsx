@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Menu } from 'types/Dish';
 import { SorterOptions } from 'types/sort';
+import cardapio from '../../../data/cardapio.json';
 import Item from './Item';
 import styles from './Itens.module.scss';
-import cardapio from '../../../data/cardapio.json';
 
 interface Props {
   search: string;
@@ -23,7 +24,7 @@ export default function Itens({ search, filter, sorter }: Props) {
       return filter ? filter === itemId : true;
     };
 
-    const sortList = (newList: typeof cardapio) => {
+    const sortList = (newList: Menu) => {
       switch (sorter) {
       case 'porcao':
         return ordenarPropriedadeCrescente(newList, 'size');
@@ -36,14 +37,14 @@ export default function Itens({ search, filter, sorter }: Props) {
       }
     };
 
-    const newList = cardapio.filter(
+    const newList: Menu = cardapio.filter(
       (item) => trySearch(item.title) && tryFilter(item.category.id)
     );
     setList(sortList(newList));
   }, [search, filter, sorter]);
 
   const ordenarPropriedadeCrescente = (
-    lista: typeof cardapio,
+    lista: Menu,
     propriedade: 'size' | 'serving' | 'price'
   ) => {
     return lista.sort((a, b) => (a[propriedade] > b[propriedade] ? 1 : -1));

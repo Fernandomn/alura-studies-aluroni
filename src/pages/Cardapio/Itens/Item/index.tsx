@@ -1,19 +1,6 @@
 import classNames from 'classnames';
+import { MenuItem } from 'types/Dish';
 import styles from './Item.module.scss';
-
-interface Props {
-  title: string;
-  description: string;
-  photo: string;
-  size: number;
-  serving: number;
-  price: number;
-  id: number;
-  category: {
-    id: number;
-    label: string;
-  };
-}
 
 export default function Item({
   title,
@@ -23,7 +10,7 @@ export default function Item({
   serving,
   price,
   photo,
-}: Props) {
+}: MenuItem) {
   return (
     <div className={styles.item}>
       <div className={styles.item__imagem}>
