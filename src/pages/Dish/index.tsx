@@ -2,6 +2,7 @@ import DishTags from 'components/DishTags';
 import { useNavigate, useParams } from 'react-router-dom';
 import cardapio from '../../data/cardapio.json';
 import styles from './Dish.module.scss';
+import NotFound from 'pages/NotFound';
 
 export default function Dish() {
   const navigate = useNavigate();
@@ -9,7 +10,8 @@ export default function Dish() {
 
   const dish = cardapio.find((item) => item.id === Number(id));
 
-  if (!dish) return '';
+  if (!dish) return <NotFound />;
+
   return (
     <>
       <button className={styles.voltar} onClick={() => navigate(-1)}>
