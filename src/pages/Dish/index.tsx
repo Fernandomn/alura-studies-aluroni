@@ -1,8 +1,9 @@
+import DefaultPage from 'components/DefaultPage';
 import DishTags from 'components/DishTags';
-import { useNavigate, useParams } from 'react-router-dom';
+import NotFound from 'pages/NotFound';
+import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import cardapio from '../../data/cardapio.json';
 import styles from './Dish.module.scss';
-import NotFound from 'pages/NotFound';
 
 export default function Dish() {
   const navigate = useNavigate();
@@ -13,24 +14,35 @@ export default function Dish() {
   if (!dish) return <NotFound />;
 
   return (
-    <>
-      <button className={styles.voltar} onClick={() => navigate(-1)}>
-        {'< Voltar'}
-      </button>
+    <Routes>
+      <Route path="*" element={<DefaultPage />}>
+        <Route
+          index
+          element={
+            <>
+              <button className={styles.voltar} onClick={() => navigate(-1)}>
+                {'< Voltar'}
+              </button>
 
-      <section className={styles.container}>
-        <h1 className={styles.titulo}>{dish.title}</h1>
+              <section className={styles.container}>
+                <h1 className={styles.titulo}>{dish.title}</h1>
 
-        <div className={styles.imagem}>
-          <img src={dish.photo} alt={dish.title} />
-        </div>
+                <div className={styles.imagem}>
+                  <img src={dish.photo} alt={dish.title} />
+                </div>
 
-        <div className={styles.conteudo}>
-          <p className={styles.conteudo__descricao}>{dish.description}</p>
+                <div className={styles.conteudo}>
+                  <p className={styles.conteudo__descricao}>
+                    {dish.description}
+                  </p>
 
-          <DishTags {...dish} />
-        </div>
-      </section>
-    </>
+                  <DishTags {...dish} />
+                </div>
+              </section>
+            </>
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
